@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compressed CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="medium-6 medium-centered large-4 large-centered columns">
+        <form action="get" method="post">
+          <div class="row column log-in-form">
+            <h4 class="text-center">Meu Patrão</h4>
+            <label>Usuário
+              <input type="text" name="username" placeholder="Email, cpf ou código vendedor">
+            </label>
+            <label>Senha
+              <input type="password" name="password" placeholder="Sua senha">
+            </label>
+            <input id="show-password" type="checkbox"><label for="show-password"><img src="https://www.google.com.br/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Feb%2FPICOL_icon_View.svg%2F1024px-PICOL_icon_View.svg.png&imgrefurl=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3APICOL_icon_View.svg&docid=cWrjL_Q6qSrOVM&tbnid=efpoj-5cnnNgWM%3A&vet=1&w=1024&h=1024&bih=651&biw=1366&ved=0ahUKEwi4r7D53sHQAhWFiJAKHfTBAkoQMwgoKAIwAg&iact=mrc&uact=8" alt="" /></label>
+            <p><a type="submit" class="button expanded">Log In</a></p>
+            <p class="text-center"><a href="#">Forgot your password?</a></p>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+
+    <h3>Hi! Welcome to REST (video aula tutorial)</h3>
+    <h4>How to works!</h4>
+    <ol>
+      <li>Method GET:</li>
+      <ul>
+        <li>/users/:id for view one user specific</li>
+        <li>/tweets for view all tweets</li>
+        <li>/users for view all users</li>
+        <li>/login verify of user is loged</li>
+        <li>/logout logout user</li>
+      </ul>
+      <li>Method POST:</li>
+      <ul>
+        <li>/users send an json to insert user in database ex: {"username": "name_fuffly"}</li>
+        <li>/login use form method post with type username and password</li>
+      </ul>
+      <li>Method PUT:</li>
+      <ul>
+        <li>/users/:id send an json to update user in database ex: {"username": "new_name_fuffly"}</li>
+      </ul>
+      <li>Method DELETE:</li>
+      <ul>
+        <li>/users/:id for delete user</li>
+      </ul>
+    </ol>
+
+    <form action="/login" method= "post">
+      <label>Username</label>
+      <input type="text" name="username" placeholder="CPF, COD, EMAIL">
+      <label>Senha</label>
+      <input type="password" name="password">
+      <input type="submit" value="Login">
+    </form>
+    <p>############################</p>
+    <p>PROJETCT MY PATRION - PMP</p>
+    use:<br>$ brew install redis<br>
+    $ sudo apt install redis-tools<br>
+    $ sudo apt install redis-server<br>
+    $ redis-cli
+    <p>############################</p>
+    <h4>How to works!</h4>
+    <ol>
+      <li>SIGNUP</li>
+      <b>POST:</b>
+      <ul>
+        <li>/signup | create new user (type: first_name, last_name, username, password, password2)</li>
+      </ul>
+      <li>LOGIN</li>
+      <b>POST:</b>
+      <ul>
+        <li>/login | send username and password for validate access</li>
+      </ul>
+      <li>FORGET PASSORD</li>
+      <b>POST:</b>
+      <ul>
+        <li>/forgepassword | informe o endereço de email, será enviado um email para redefinição de senha</li>
+      </ul>
+      <li>STATUS USER</li>
+      <b>GET:</b>
+      <ul>
+        <li>/users/:id | status user</li>
+      </ul>
+      <b>PUT:</b>
+      <ul>
+        <li>/users/:id | update status user</li>
+      </ul>
+      <li>CARD</li>
+      <b>GET:</b>
+      <ul>
+        <li>/cards | all cards</li>
+        <li>/cards/:id | view card specific of user</li>
+        <li>/cards/:team | all cards for team</li>
+        <li>/cards/:team/:id | view card specific of user for the team</li>
+      </ul>
+      <b>POST:</b>
+      <ul>
+        <li>/cards/:team/:id/:newid | alteração de vendedor. Solicitar troca o vendendor do meu time pelo vendedor do time de outra pessoa</li>
+      </ul>
+      <li>RANK GLOBAL</li>
+      <b>GET:</b>
+      <ul>
+        <li>/rank | all rank</li>
+      </ul>
+      <li>RANK TEAM</li>
+      <b>GET:</b>
+      <ul>
+        <li>/rank/:id | rank of team</li>
+      </ul>
+      <li>RANK WEEKLY</li>
+      <b>GET:</b>
+      <ul>
+        <li>/rank/weekly | global rank of week</li>
+        <li>/rank/weekly/mvp | top 10 best of week</li>
+        <li>/rank/weekly/wvp | top 10 worse of week</li>
+      </ul>
+    </ol>
+
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" charset="utf-8"></script>
+    <!-- Compressed JavaScript -->
+    <script src="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.js"></script>
+
+  </body>
+</html>

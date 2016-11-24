@@ -16,38 +16,21 @@ router
   })
   .post('/login', passport.authenticate('local', {
     successRedirect: '/login',
-    failureRedirect: '/',
+    failureRedirect: '/login',
     failureFlash: true
   }))
   // Logout
   .get('/logout', (req, res, next) => {
     req.session.destroy((err) => {
-      res.redirect('/')
+      if (!err) {
+        return res.send({ message: true })
+      }
+      return res.send({ message: false })
     })
   })
   // Signup
   .get('/signup', (req, res, next) => {
-    res.send(`
-      <form action="/signup" method= "post">
-        <div>
-          <label>Nome:</label>
-          <input type="text" name="nome">
-        </div>
-        <div>
-          <label>Email</label>
-          <input type="text" name="username">
-        </div>
-        <div>
-          <label>Password</label>
-          <input type="password" name="password">
-        </div>
-        <div>
-          <label>Repeat Password</label>
-          <input type="password" name="password2">
-        </div>
-        <input type="submit" value="Login">
-      </form>
-      `)
+    res.render('teste', req.flash('message'));
   })
   .post('/signup', passport.authenticate('local-register', {
     successRedirect: '/login',
