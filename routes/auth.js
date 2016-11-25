@@ -22,19 +22,17 @@ router
   // Logout
   .get('/logout', (req, res, next) => {
     req.session.destroy((err) => {
-      if (!err) {
-        return res.send({ message: true })
-      }
-      return res.send({ message: false })
+      res.redirect('/')
     })
   })
   // Signup
   .get('/signup', (req, res, next) => {
-    res.render('teste', req.flash('message'));
+    res.render('teste', req.flash('messa'));
   })
   .post('/signup', passport.authenticate('local-register', {
     successRedirect: '/login',
     failureRedirect: '/signup',
+
   }))
 ;
 

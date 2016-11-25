@@ -12,6 +12,8 @@ const passport = require('passport');
 require('./passport');
 // cache
 const cache = require('./cache');
+// port
+const port = 3000;
 // routes
 const auth = require('./routes/auth');
 const users = require('./routes/users');
@@ -30,7 +32,7 @@ app
   .use(bodyParse.urlencoded({extended: false}))
   .use(session({
     store: new RedisStore(),
-    secret: "i love dogs",
+    secret: "purdow",
     resave: false,
     saveUninitialized: false
   }))
@@ -50,4 +52,6 @@ app
 ;
 
 
-app.listen(3000);
+app.listen( port, function functionName() {
+    console.log('Server start port ' + port );
+});

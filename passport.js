@@ -11,7 +11,9 @@ function isNumber(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 }
 // authentication
-function authenticate(req, username, password, done) {
+function authenticate(req, res, next, done) {
+  var username = req.body.username;
+  var password = String(req.body.password);
   const query = db('users');
   if (username.substring(0,1) === 'V') {
     query.where('cod_integracao', username);
@@ -23,10 +25,10 @@ function authenticate(req, username, password, done) {
   }
   query.first().then((user) => {
     if (!user || !bcrypt.compareSync(password, user.password)) {
-      return done(null, false, req.flash('err', 'Usuário ou senha inválidos'));
+      return done(null, false, { message: 'invalid user and password combination' });
     }
     done(null, user);
-  })
+  }, done)
 }
 
 function register(req, username, password, done) {
