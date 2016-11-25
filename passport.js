@@ -12,7 +12,7 @@ function isNumber(n) {
 }
 // authentication
 function authenticate(req, res, next, done) {
-  var username = req.body.username;
+  var username = String(req.body.username);
   var password = String(req.body.password);
   const query = db('users');
   if (username.substring(0,1) === 'V') {
@@ -25,31 +25,39 @@ function authenticate(req, res, next, done) {
   }
   query.first().then((user) => {
     if (!user || !bcrypt.compareSync(password, user.password)) {
-      return done(null, false, { message: 'invalid user and password combination' });
+      return done(null, false, { message: 'Usuário ou senha inválido' });
     }
     done(null, user);
   }, done)
 }
 
-function register(req, username, password, done) {
-  db('users').where('email', username).first().then((user) => {
-    if (user) {
-      return done(null, done, req.flash('message', 'Já existe uma conta de usuário com este email'));
-    }
-    if (password !== req.body.password2) {
-      return done(null, done, req.flash('message', 'As senhas não combinam!'));
-    }
-
-    const newUser = {
-      nome: req.body.nome,
-      email: username,
-      password: bcrypt.hashSync(password)
-    };
-    db('users').insert(newUser).then((ids) => {
-      newUser.id = ids[0];
-      done(null, newUser);
-    })
-  })
+function register(req, res, next, done) {
+  console.log(cpf);
+  // var cpf = req.body.cpf;
+  // db('users').where('cpf', cpf).first().then((user) => {
+  //   if (!user) {
+  //     return done(null, false, {message: 'Usuário não registrado'})
+  //   }
+  //   done(null, user);
+  // }, done)
+  // db('users').where('email', username).first().then((user) => {
+  //   if (user) {
+  //     return done(null, done, req.flash('message', 'Já existe uma conta de usuário com este email'));
+  //   }
+  //   if (password !== req.body.password2) {
+  //     return done(null, done, req.flash('message', 'As senhas não combinam!'));
+  //   }
+  //
+  //   const newUser = {
+  //     nome: req.body.nome,
+  //     email: username,
+  //     password: bcrypt.hashSync(password)
+  //   };
+  //   db('users').insert(newUser).then((ids) => {
+  //     newUser.id = ids[0];
+  //     done(null, newUser);
+  //   })
+  // })
 }
 
 passport.serializeUser(function (user, done) {

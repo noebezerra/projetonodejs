@@ -8,28 +8,347 @@
     <!-- Compressed CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
   </head>
+  <style media="screen">
+    @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,300,200);
+    @import url(http://fonts.googleapis.com/css?family=Lobster);
+
+
+    /*********************************************************************************/
+    /* Global                                                                        */
+    /*********************************************************************************/
+
+    /* Basic */
+
+    body
+    {
+      background: #E2E2E2;
+      padding: 10px 30px;
+    }
+    h1 {
+      font-family: 'Yanone Kaffeesatz';
+      font-size: 2em;
+    }
+    body, input, textarea, select
+    {
+      color: #474f51;
+      font-size: 13.5pt;
+      font-family: 'Yanone Kaffeesatz';
+      line-height: 1.85em;
+      font-weight: 300;
+    }
+
+    ul, ol, p, dl
+    {
+      margin: 0 0 2em 0;
+    }
+
+    a
+    {
+      color: #43a445;
+      text-decoration: underline;
+    }
+
+    a:hover
+    {
+      text-decoration: none;
+    }
+
+    section > :last-child, .last-child
+    {
+      margin-bottom: 0 !important;
+    }
+
+    /* Multi-use */
+
+    .link-list
+    {
+    }
+
+      .link-list li
+      {
+        padding: 0.2em 0 0.2em 0;
+      }
+
+      .link-list li:first-child
+      {
+        padding-top: 0 !important;
+        border-top: 0 !important;
+      }
+
+      .link-list li:last-child
+      {
+        padding-bottom: 0 !important;
+        border-bottom: 0 !important;
+      }
+
+      #content .link-list li
+      {
+        border-bottom: solid 1px #e2e6e8;
+      }
+
+      #footer .link-list li
+      {
+        border-top: solid 1px #e0e4e6;
+        border-bottom: solid 1px #b5bec3;
+      }
+
+    .quote-list
+    {
+    }
+
+      .quote-list li
+      {
+        padding: 1em 0 1em 0;
+        overflow: hidden;
+      }
+
+      .quote-list li:first-child
+      {
+        padding-top: 0 !important;
+        border-top: 0 !important;
+      }
+
+      .quote-list li:last-child
+      {
+        padding-bottom: 0 !important;
+        border-bottom: 0 !important;
+      }
+
+        .quote-list li img
+        {
+          float: left;
+        }
+
+        .quote-list li p
+        {
+          margin: 0 0 0 90px;
+          font-size: 1.2em;
+          font-style: italic;
+        }
+
+        .quote-list li span
+        {
+          display: block;
+          margin-left: 90px;
+          font-size: 0.9em;
+          font-weight: 400;
+        }
+
+      #content .quote-list li
+      {
+        border-bottom: solid 1px #e2e6e8;
+      }
+
+      #footer .quote-list li
+      {
+        border-top: solid 1px #e0e4e6;
+        border-bottom: solid 1px #b5bec3;
+      }
+
+    .check-list
+    {
+    }
+
+      .check-list li
+      {
+        padding: 0.7em 0 0.7em 45px;
+        font-size: 1.2em;
+        background: url('images/icon-checkmark.png') 0px 1.05em no-repeat;
+      }
+
+      .check-list li:first-child
+      {
+        padding-top: 0 !important;
+        border-top: 0 !important;
+        background-position: 0 0.3em;
+      }
+
+      .check-list li:last-child
+      {
+        padding-bottom: 0 !important;
+        border-bottom: 0 !important;
+      }
+
+      #content .check-list li
+      {
+        border-bottom: solid 1px #e2e6e8;
+      }
+
+      #footer .check-list li
+      {
+        border-top: solid 1px #e0e4e6;
+        border-bottom: solid 1px #b5bec3;
+      }
+
+    .feature-image
+    {
+      display: block;
+      margin: 0 0 2em 0;
+      outline: 0;
+    }
+
+      .feature-image img
+      {
+        display: block;
+        width: 100%;
+      }
+
+    .bordered-feature-image
+    {
+      display: block;
+      background: #fff url('images/bg04.png');
+      padding: 10px;
+      box-shadow: 3px 3px 3px 1px rgba(0,0,0,0.15);
+      margin: 0 0 1.5em 0;
+      outline: 0;
+    }
+
+      .bordered-feature-image img
+      {
+        display: block;
+        width: 100%;
+      }
+
+    .button-big
+    {
+      display: inline-block;
+      background: #ed391b;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.75em;
+      font-weight: 300;
+      padding: 15px 45px 15px 45px;
+      outline: 0;
+      border-radius: 10px;
+      box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.75), inset 0px 2px 0px 0px rgba(255,192,192,0.5), inset 0px 0px 0px 2px rgba(255,96,96,0.85), 3px 3px 3px 1px rgba(0,0,0,0.15);
+      background-image: -moz-linear-gradient(top, #ed391b, #ce1a00);
+      background-image: -webkit-linear-gradient(top, #ed391b, #ce1a00);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ed391b), to(#ce1a00));
+      background-image: -ms-linear-gradient(top, #ed391b, #ce1a00);
+      background-image: -o-linear-gradient(top, #ed391b, #ce1a00);
+      background-image: linear-gradient(top, #ed391b, #ce1a00);
+      text-shadow: -1px -1px 1px rgba(0,0,0,0.5);
+    }
+
+    .button-big:hover
+    {
+      background: #fd492b;
+      box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.75), inset 0px 2px 0px 0px rgba(255,192,192,0.5), inset 0px 0px 0px 2px rgba(255,96,96,0.85), 3px 3px 3px 1px rgba(0,0,0,0.15);
+      background-image: -moz-linear-gradient(top, #fd492b, #de2a10);
+      background-image: -webkit-linear-gradient(top, #fd492b, #de2a10);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fd492b), to(#de2a10));
+      background-image: -ms-linear-gradient(top, #fd492b, #de2a10);
+      background-image: -o-linear-gradient(top, #fd492b, #de2a10);
+      background-image: linear-gradient(top, #fd492b, #de2a10);
+    }
+
+    .button-big:active
+    {
+      background: #ce1a00;
+      box-shadow: inset 0px 0px 0px 1px rgba(0,0,0,0.75), inset 0px 2px 0px 0px rgba(255,192,192,0.5), inset 0px 0px 0px 2px rgba(255,96,96,0.85), 3px 3px 3px 1px rgba(0,0,0,0.15);
+      background-image: -moz-linear-gradient(top, #ce1a00, #ed391b);
+      background-image: -webkit-linear-gradient(top, #ce1a00, #ed391b);
+      background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ce1a00), to(#ed391b));
+      background-image: -ms-linear-gradient(top, #ce1a00, #ed391b);
+      background-image: -o-linear-gradient(top, #ce1a00, #ed391b);
+      background-image: linear-gradient(top, #ce1a00, #ed391b);
+    }
+
+    .code li
+    {
+      list-style-type:none;
+    }
+    .code pre {
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 0;
+      color: #5B78FC;
+      word-wrap: break-word;
+    }
+    pre {
+      font-size: 12px;
+    }
+  </style>
   <body>
     <div class="row">
-      <div class="medium-6 medium-centered large-4 large-centered columns">
-        <form action="get" method="post">
-          <div class="row column log-in-form">
-            <h4 class="text-center">Meu Patrão</h4>
-            <label>Usuário
-              <input type="text" name="username" placeholder="Email, cpf ou código vendedor">
-            </label>
-            <label>Senha
-              <input type="password" name="password" placeholder="Sua senha">
-            </label>
-            <input id="show-password" type="checkbox"><label for="show-password"><img src="https://www.google.com.br/imgres?imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Feb%2FPICOL_icon_View.svg%2F1024px-PICOL_icon_View.svg.png&imgrefurl=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3APICOL_icon_View.svg&docid=cWrjL_Q6qSrOVM&tbnid=efpoj-5cnnNgWM%3A&vet=1&w=1024&h=1024&bih=651&biw=1366&ved=0ahUKEwi4r7D53sHQAhWFiJAKHfTBAkoQMwgoKAIwAg&iact=mrc&uact=8" alt="" /></label>
-            <p><a type="submit" class="button expanded">Log In</a></p>
-            <p class="text-center"><a href="#">Forgot your password?</a></p>
-          </div>
-        </form>
-
-      </div>
+      <h1>REST api Meu Patrão</h1>
+      <ul>
+        <li>Post /login </li>
+        <div  class="code">
+          <pre>
+            {"username": "nome@email.com", "password": 123}
+            {"username": 12345678911, "password": 123}
+            {"username": V00, "password": 123}
+          </pre>
+        </div>
+        <pre><b>Exemplo retorno de sucesso:
+          {
+            "session": {
+              "cookie": {
+                "originalMaxAge": null,
+                "expires": null,
+                "httpOnly": true,
+                "path": "/"
+              },
+              "passport": {
+                "user": 4
+              }
+            },
+            "user": {
+              "id": 4,
+              "email": "noe.neto@apotiguar.com",
+              "nome": "NOE BEZERRA DA SILVA NETO",
+              "types_profile_id": 3
+            },
+            "authenticated": true
+          }
+        </b>
+      </pre>
+        <pre><b> Caso Falhe terá:
+          ...
+            flash": {
+              "error": [
+              "Usuário ou senha inválido"
+              ]
+            },
+          ...
+            "authenticated": false
+          }
+        </b>
+        </pre>
+      </ul>
+      <ul>
+        <li>Get /logout encerrar sessão</li>
+      </ul>
+      <ul>
+        <li>Post /signup para cadastro de usuário</li>
+        <div  class="code">
+          <ol>
+            <li>Informe o CPF</li>
+            <pre>
+              {"cpf": 12345678911}
+            </pre>
+            <b>Se CPF já estiver sido cadastrado verá um retorno como {"message": "Usuário já foi registrado"}</b>
+            <br>
+            <b>Se CPF não for encontrado no banco de dados ou não existir verá um retorno como {"message": "CPF não encontrado ou incorreto"}</b>
+            <li>Informe o dados cadastrais</li>
+            <pre>
+              {"nome": "Meu Nome", "cpf": 12345678911, "password": 123, "password2":123}
+            </pre>
+            <b>Sucesso: retorno {"message": 1}</b>
+            <br>
+            <b>Falha: retorno {"message": 0}</b>
+          </ol>
+        </div>
+      </ul>
+    
     </div>
 
 
+
+
+****************************************
 
     <h3>Hi! Welcome to REST (video aula tutorial)</h3>
     <h4>How to works!</h4>
