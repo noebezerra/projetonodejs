@@ -72,6 +72,14 @@ router
       })
     }
   })
+  // Forgot
+  .post('/forgot', (req, res, next) => {
+    db('users').where('email', req.body.email).then((user) => {
+      if (!user) {
+        return res.send({message: 'Usuário não encontrado com o email informado'});
+      }
+    })
+  })
 ;
 
 module.exports = router;

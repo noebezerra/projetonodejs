@@ -274,7 +274,7 @@
     <div class="row">
       <h1>REST api Meu Patrão</h1>
       <ul>
-        <li>Post /login </li>
+        <li>Post /login inicia uma sessão</li>
         <div  class="code">
           <pre>
             {"username": "nome@email.com", "password": 123}
@@ -342,7 +342,35 @@
           </ol>
         </div>
       </ul>
-    
+      <ul>
+        <li>Put /changepassword alteração de senha do usuário logado</li>
+        <div class="code">
+          <pre>
+            {"newpassword": 1234}
+          </pre>
+        </div>
+        <b>Sucesso: {"message": "Senha alterada com sucesso!"}</b>
+        <br>
+        <b>Falha: {"message": "Houve um error ao alterar a senha"} (OBS: Acredito que nunca haverá falha pois o usuário deve está logado)</b>
+      </ul>
+      <ul>
+        <li>Get /profile retorna todos os dados do usuário logado</li>
+        <pre><b>
+        {
+          "id": 4,
+          "email": "noe.neto@apotiguar.com",
+          "password": "$2a$10$UWlvnHFvu0Ypa51YcG/mMeAd/zgnSafVXlXckvUUerDzeQzNy8jY6",
+          "nome": "NOE BEZERRA DA SILVA NETO",
+          "cpf": "60510649319",
+          "rg": "0",
+          "cod_integracao": "V99",
+          "dta_nasc": "1994-12-30T03:00:00.000Z",
+          "loja": "0102-COHAMA-Sao Luís-MA",
+          "situacao": null,
+          "types_profile_id": 3
+        }
+      </b></pre>
+      </ul>
     </div>
 
 

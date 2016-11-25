@@ -16,6 +16,7 @@ const cache = require('./cache');
 const port = 3000;
 // routes
 const auth = require('./routes/auth');
+const profile = require('./routes/profile');
 const users = require('./routes/users');
 
 const app = express();
@@ -41,6 +42,7 @@ app
   .use(passport.initialize())
   .use(passport.session())
   .use(auth)
+  .use(profile)
   .use(users)
 ;
 
